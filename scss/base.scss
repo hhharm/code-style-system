@@ -1,107 +1,102 @@
-//todo: split index.scss to 3 files, mb more
-//structure: first modifications then elements
+//order: first modifications then elements
 //Theme layer
 .theme {
-  //todo: write all of this
   &_color {
     &_project-default {
       //Значения фонов блоков:
-      //      - дефолтный #FFFFFF;
-      //- акцентный #ffcc00;
-      //- бордерный #000000.
-      //
+      --block-background-color-main: #FFFFFF;
+      --block-background-color-highlighted: #ffcc00;
+      --block-background-color-border: #000000;
       //Значения состояний текста:
-      //- основной: #000000;
-      //  - второстепенный: rgba(0, 0, 0, 0.6);
-      //  - дополнительный: rgba(0, 0, 0, 0.3),
-      //  - ссылочный: #0077ff.
+      --text-color-main: #000000;
+      --text-color-secondary: rgba(0, 0, 0, 0.6);
+      --text-color-additional: rgba(0, 0, 0, 0.3);
+      --text-color-link: #0077ff;
     }
 
     &_project-brand {
       //Значения фонов блоков:
-      //- дефолтный: #0077ff;
-      //- акцентный: #FFFFFF;
-      //- бордерный: #FFFFFF.
-      //
+      --block-background-color-main: #0077ff;
+      --block-background-color-highlighted: #FFFFFF;
+      --block-background-color-border: #FFFFFF;
       //Значения состояний текста:
-      //- основной: #FFFFFF;
-      //- второстепенный: rgba(255, 255, 255, 0.6);
-      //- дополнительный: rgba(255, 255, 255, 0.3),
-      //- ссылочный: #FFFFFF.
+      --text-color-main: #FFFFFF;
+      --text-color-secondary: rgba(255, 255, 255, 0.6);
+      --text-color-additional: rgba(255, 255, 255, 0.3);
+      --text-color-link: #FFFFFF;
     }
 
     &_project-inverse {
       //Значения фонов блоков:
-      //- дефолтный: #000000;
-      //- акцентный: #FFFFFF;
-      //- бордерный: #FFFFFF.
-      //
+      --block-background-color-main: #000000;
+      --block-background-color-highlighted: #FFFFFF;
+      --block-background-color-border: #FFFFFF;
       //Значения состояний текста:
-      //- основной: #FFFFFF;
-      //- второстепенный: rgba(255, 255, 255, 0.6);
-      //- дополнительный: rgba(255, 255, 255, 0.3),
-      //- ссылочный: #0077ff.
+      --text-color-main: #FFFFFF;
+      --text-color-secondary: rgba(255, 255, 255, 0.6);
+      --text-color-additional: rgba(255, 255, 255, 0.3);
+      --text-color-link: #0077ff;
     }
 
     &_project-warning {
       //Значения фонов блоков:
-      //- дефолтный: #ff3333;
-      //- акцентный: #FFFFFF;
-      //- бордерный: #ff3333.
-      //
+      --block-background-color-main: #ff3333;
+      --block-background-color-highlighted: #FFFFFF;
+      --block-background-color-border: #ff3333;
       //Значения состояний текста:
-      //- основной: #FFFFFF;
-      //- второстепенный: rgba(255, 255, 255, 0.6);
-      //- дополнительный: rgba(255, 255, 255, 0.3),
-      //- ссылочный: #FFF.
+      --text-color-main: #FFFFFF;
+      --text-color-secondary: rgba(255, 255, 255, 0.6);
+      --text-color-additional: rgba(255, 255, 255, 0.3);
+      --text-color-link: #FFF;
     }
   }
 
-  &_space {
-    &_default {
-      //Значения размеров высоты текста (так как в задании текст в виде линий):
-      //- s: 8px;
-      //- m: 10px;
-      //- l: 11px;
-      //- xl: 13px;
-      //- xxl: 16px.
-      //
-      //Значения межстрочных интервалов:
-      //- s: 21px;
-      //- m: 25px;
-      //- l: 28px;
-      //- xl: 34px;
-      //- xxl: 38px.
-    }
-  }
-
+  //&_space { todo: or size??
   &_size {
     &_default {
-      //Пример размеров текста:
-      //- xxxs: 3px;
-      //- xxs: 6px;
-      //- xs: 9px;
-      //- s: 15px;
-      //- m: 18px;
-      //- l: 24px;
-      //- xl: 27px;
-      //- xxl: 36px;
-      //- xxxl: 45px;
-      //- xxxxl: 51px;
-      //- xxxxxl: 72px.
+      //Значения размеров высоты текста (так как в задании текст в виде линий):
+      --text-height-s: 8px;
+      --text-height-m: 10px;
+      --text-height-l: 11px;
+      --text-height-xl: 13px;
+      --text-height-xxl: 16px;
+
+      //Значения межстрочных интервалов:
+      --text-line-space-s: 21px;
+      --text-line-space-m: 25px;
+      --text-line-space-l: 28px;
+      --text-line-space-xl: 34px;
+      --text-line-space-xxl: 38px;
     }
   }
 
-  &_gap_small {
-    //--gap:
-    //.theme_gap_small — модификатор на отступ между колонками и отступами в сетке.
-    // В стилях содержит переменную gap, которая на десктопе имеет значение, соответствующее
-    // xl-отступу, а в мобильном представлении s. Для получения половинного значения переменная gap
-    // делится на два.
+  //&_size { todo: or space??
+  &_space {
+    &_default {
+      //Пример размеров отступов:
+      --space-xxxs: 3px;
+      --space-xxs: 6px;
+      --space-xs: 9px;
+      --space-s: 15px;
+      --space-m: 18px;
+      --space-l: 24px;
+      --space-xl: 27px;
+      --space-xxl: 36px;
+      --space-xxxl: 45px;
+      --space-xxxxl: 51px;
+      --space-xxxxxl: 72px;
+    }
   }
 
-  //this means add variable for breakpoint, right?
-  //  todo: На экране с размером меньше 1024px все блоки должны перестроиться один под другим.
+  //На экране с размером меньше 1024px все блоки должны перестроиться один под другим.
+  --breakpoint: 1024px;
+
+  &_gap_small {
+    --gap-size: var(--space-s, 15px);
+    @media (min-width: 1024px) {
+      --gap-size: var(--space-xl, 27px);
+    }
+  }
 }
 
 //frame layer
@@ -110,36 +105,41 @@
     &_align {
       &_center {
         //  Выравнивание контейнера по горизонтали
+        //todo: check that works correctly
+        margin-left: auto;
+        margin-right: auto;
       }
 
       &_size {
         //Максимальная ширина контейнера
-        //  Для s модификатора нужно указать ширину 920px, для m — 1280px.
         &_s {
+          max-width: 920px;
         }
 
         &_m {
+          max-width: 1280px;
         }
       }
 
       &_space-v {
         &_xxxxl {
-          //Внутренние отступы по вертикали
+          padding-top: var(--space-xxxxl, 51px);
+          padding-bottom: var(--space-xxxxl, 51px);
         }
 
         &_xxxxxl {
-          //  Внутренние отступы по вертикали
+          padding-top: var(--space-xxxxxl, 72px);
+          padding-bottom: var(--space-xxxxxl, 72px);
         }
       }
 
       &_indent-b {
         &_xxl {
-          //Внешний отступ снизу
+          margin-bottom: var(--space-xxl, 36px);
         }
 
         &_xxxxl {
-          // Внешний отступ снизу
-
+          margin-bottom: var(--space-xxxxl, 51px);
         }
       }
     }
@@ -147,59 +147,77 @@
 }
 
 .grid {
-  //Ширина экрана screen-m совпадает с шириной брейкпойнта и равна 1024px.
+  display: grid;
+
   &_m-columns {
+    //todo: understand what is required. screen-m, screen width, 1024... ???
+    //Ширина экрана screen-m совпадает с шириной брейкпойнта и равна 1024px.
     //Количество возможных колонок при ширине экрана screen-m
     &_12 {
-
+      //todo: check that this works as expected
+      grid-template-columns: repeat(12, 1fr);
     }
 
     &_10 {
-
+      //todo: check that this works as expected
+      grid-template-columns: repeat(10, 1fr);
     }
 
   }
 
   &_col-gap {
+    //todo: check that this works as expected
     //  Отступ между колонками
     &_two-thirds {
-
+      grid-column-gap: 66%;
     }
 
     &_full {
+      grid-column-gap: 100%;
     }
 
     &_half {
+      grid-column-gap: 50%;
     }
-
   }
 
   &_row-gap {
+    //todo: check that this works as expected
     //Отступ между строками
     &_full {
+    {
+      grid-row-gap: 100%;
     }
 
-    &_half {
+      &_half {
+        grid-row-gap: 50%;
+      }
+
     }
 
-  }
+    &__fraction {
+      //todo: check that this works as expected
+      //  Колоночный элемент c шириной в несколько колонок
+      &_m-col {
+        &_2 {
+          grid-column: span 2;
+        }
 
-  &__fraction {
-    //  Колоночный элемент c шириной в несколько колонок
-    &_m-col {
-      &_2 {
-      }
+        &_3 {
+          grid-column: span 3;
+        }
 
-      &_3 {
-      }
+        &_4 {
+          grid-column: span 4;
+        }
 
-      &_4 {
-      }
+        &_5 {
+          grid-column: span 5;
+        }
 
-      &_5 {
-      }
-
-      &_8 {
+        &_8 {
+          grid-column: span 8;
+        }
       }
     }
   }
@@ -207,13 +225,384 @@
 
 //patterns layer
 .card {
-  //  todo: write
+  //todo: check if really flex
+  display: flex;
   //  Блок card — карточка для представления информации в компактном формате.
+  &_border {
+    &_all {
+      //todo: check that really 1px
+      border: 1px solid var(--block-background-color-border);
+    }
+  }
+
+  &_view {
+    &_default {
+      background-color: var(--block-background-color-main);
+    }
+  }
+
+  &__content {
+    &_distribute {
+      &_center {
+        //todo: check what should be there
+        justify-content: center;
+      }
+    }
+
+    &_vertical-align {
+      &_center {
+        vertical-align: middle;
+      }
+    }
+
+    &_space-a {
+      &_m {
+        padding: var(--space-m, 18px);
+      }
+
+      &_l {
+        padding: var(--space-l, 24px);
+      }
+
+      &_xl {
+        padding: var(--space-xl, 27px);
+      }
+
+
+      &_xxl {
+        padding: var(--space-xxl, 36px);
+      }
+
+      &_xxxl {
+        padding: var(--space-xxxl, 45px);
+      }
+    }
+  }
+
+  &__footer {
+    //todo: check if really absolute
+    position: absolute;
+    bottom: 0;
+
+    &_distribute {
+      &_center {
+        //todo: check what should be there
+        justify-content: center;
+      }
+
+      &_between {
+        //todo: check what should be there
+        justify-content: space-between;
+      }
+
+      &_right {
+        //todo: check what should be there
+        justify-content: right;
+      }
+    }
+
+    &_vertical-align {
+      &_center {
+        vertical-align: middle;
+      }
+
+      &_top {
+        vertical-align: top;
+      }
+
+      &_bottom {
+        vertical-align: bottom;
+      }
+    }
+
+    &_space-a {
+      &_m {
+        padding: var(--space-m, 18px);
+      }
+
+      &_l {
+        padding: var(--space-l, 24px);
+      }
+
+      &_xl {
+        padding: var(--space-xl, 27px);
+      }
+
+
+      &_xxl {
+        padding: var(--space-xxl, 36px);
+      }
+
+    }
+  }
 }
 
 .form {
-  //  todo: write
   //  Блок form — это визуальное представление веб-формы, которая принимает и отправляет данные пользователя.
+  &_border {
+    &_all {
+      border: 3px solid var(--block-background-color-border);
+    }
+  }
+
+  &_view {
+    &_default {
+      background-color: var(--block-background-color-main);
+    }
+  }
+
+  &__item {
+    &_border {
+      &_bottom {
+        //  todo: there is no description !! ???
+        border-bottom: 3px solid var(--block-background-color-border);
+      }
+    }
+
+    &_vertical-align {
+      &_center {
+        vertical-align: middle;
+      }
+    }
+
+    &_indent-b {
+      &_xxxs {
+        margin-bottom: var(--space-xxxs, 3px);
+      }
+
+      &_xxs {
+        margin-bottom: var(--space-xxs, 6px);
+      }
+
+      &_xs {
+        margin-bottom: var(--space-xs, 9px);
+      }
+
+      &_s {
+        margin-bottom: var(--space-s, 15px);
+      }
+
+      &_m {
+        margin-bottom: var(--space-m, 18px);
+      }
+
+      &_l {
+        margin-bottom: var(--space-l, 24px);
+      }
+
+      &_xl {
+        margin-bottom: var(--space-xl, 27px);
+      }
+
+      &_xxl {
+        margin-bottom: var(--space-xxl, 36px);
+      }
+
+      &_xxxl {
+        margin-bottom: var(--space-xxxl, 45px);
+      }
+
+      &_xxxxl {
+        margin-bottom: var(--space-xxxxl, 51px);
+      }
+    }
+
+    &_space-h {
+      &_xxxs {
+        padding-left: var(--space-xxxs, 3px);
+        padding-right: var(--space-xxxs, 3px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxs {
+        padding-left: var(--space-xxs, 6px);
+        padding-right: var(--space-xxs, 6px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xs {
+        padding-left: var(--space-xs, 9px);
+        padding-right: var(--space-xs, 9px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_s {
+        padding-left: var(--space-s, 15px);
+        padding-right: var(--space-s, 15px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_m {
+        padding-left: var(--space-m, 18px);
+        padding-right: var(--space-m, 18px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_l {
+        padding-left: var(--space-l, 24px);
+        padding-right: var(--space-l, 24px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xl {
+        padding-left: var(--space-xl, 27px);
+        padding-right: var(--space-xl, 27px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxl {
+        padding-left: var(--space-xxl, 36px);
+        padding-right: var(--space-xxl, 36px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxxl {
+        padding-left: var(--space-xxxl, 45px);
+        padding-right: var(--space-xxxl, 45px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxxxl {
+        padding-left: var(--space-xxxxl, 51px);
+        padding-right: var(--space-xxxxl, 51px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+
+      }
+    }
+
+    &_space-v {
+      &_xxxs {
+        padding-top: var(--space-xxxs, 3px);
+        padding-bottom: var(--space-xxxs, 3px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxs {
+        padding-top: var(--space-xxs, 6px);
+        padding-bottom: var(--space-xxs, 6px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xs {
+        padding-top: var(--space-xs, 9px);
+        padding-bottom: var(--space-xs, 9px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_s {
+        padding-top: var(--space-s, 15px);
+        padding-bottom: var(--space-s, 15px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_m {
+        padding-top: var(--space-m, 18px);
+        padding-bottom: var(--space-m, 18px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_l {
+        padding-top: var(--space-l, 24px);
+        padding-bottom: var(--space-l, 24px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xl {
+        padding-top: var(--space-xl, 27px);
+        padding-bottom: var(--space-xl, 27px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxl {
+        padding-top: var(--space-xxl, 36px);
+        padding-bottom: var(--space-xxl, 36px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxxl {
+        padding-top: var(--space-xxxl, 45px);
+        padding-bottom: var(--space-xxxl, 45px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+
+      &_xxxxl {
+        padding-top: var(--space-xxxxl, 51px);
+        padding-bottom: var(--space-xxxxl, 51px);
+
+        &.form__item_border_bottom {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__label {
+    &_width {
+      &_default {
+        width: 35%;
+      }
+    }
+  }
+
+  &__control {
+  }
 
 }
 
@@ -221,45 +610,475 @@
   //  todo: write
   //Информационный блок, имеющий статус. Нужное оформление достигается путём миксования к нему блока
   // темы со статусным значением цветового модификатора (например, theme_color_project-warning).
+
+  &_border {
+    &_all {
+      border: 3px solid var(--block-background-color-border);
+    }
+  }
+
+  &_view {
+    &_default {
+      background-color: var(--block-background-color-main);
+    }
+  }
+
+  &__content {
+    &_distribute {
+      &_center {
+        //todo: check what should be there
+        justify-content: center;
+      }
+
+      &_between {
+        //todo: check what should be there
+        justify-content: space-between;
+      }
+
+      &_default {
+        //todo: check what should be there
+        justify-content: normal;
+      }
+    }
+
+    &_space-a {
+      &_xl {
+        padding: var(--space-xl, 27px);
+      }
+
+
+      &_xxl {
+        padding: var(--space-xxl, 36px);
+      }
+    }
+  }
+
+  &__action {
+    &_distribute {
+      &_center {
+        //todo: check what should be there
+        justify-content: center;
+      }
+
+      &_between {
+        //todo: check what should be there
+        justify-content: space-between;
+      }
+
+      &_default {
+        //todo: check what should be there
+        justify-content: normal;
+      }
+    }
+
+    &_space-a {
+      &_xl {
+        padding: var(--space-xl, 27px);
+      }
+
+
+      &_xxl {
+        padding: var(--space-xxl, 36px);
+      }
+    }
+  }
 }
 
 .list {
-  //  todo: write
   //  list используется для вертикального представления повторяющихся сущностей.
   //  Отлично подходит для отображения истории, контактов, вертикальных меню.
+  &_border {
+    &_all {
+      border: 3px solid var(--block-background-color-border);
+    }
+  }
+
+  &_view {
+    &_default {
+      background-color: var(--block-background-color-main);
+    }
+  }
+
+  &__item {
+
+    &_border {
+      &_bottom {
+        //  todo: there is no description !! ???
+        border-bottom: 3px solid var(--block-background-color-border);
+      }
+
+      &_top {
+        //  todo: there is no description !! ???
+        border-top: 3px solid var(--block-background-color-border);
+      }
+    }
+
+    &_distribute {
+      &_between {
+        //todo: check what should be there
+        justify-content: space-between;
+      }
+    }
+
+    &_vertical-align {
+      &_center {
+        vertical-align: middle;
+      }
+    }
+
+    &_indent-t {
+      &_m {
+        margin-top: var(--space-m);
+      }
+    }
+
+    &_indent-b {
+      &_s {
+        margin-bottom: var(--space-s, 15px);
+      }
+
+      &_m {
+        margin-bottom: var(--space-m, 18px);
+      }
+
+      &_l {
+        margin-bottom: var(--space-l, 24px);
+      }
+
+      &_xl {
+        margin-bottom: var(--space-xl, 27px);
+      }
+    }
+
+    &_space-b {
+      &_s {
+        padding-bottom: var(--space-s, 15px);
+      }
+    }
+
+    &_space-a {
+      &_m {
+        padding: var(--space-m, 18px);
+      }
+    }
+
+  }
 }
 
 .icon-plus {
-  //  todo: write
+  &_vertical-align {
+    &_center {
+      vertical-align: middle;
+    }
+  }
+
+  &__icon {
+    &_indent-r {
+      &_s {
+        margin-right: var(--space-s, 15px);
+      }
+
+      &_m {
+        margin-right: var(--space-m, 18px);
+      }
+    }
+
+    &_indent-l {
+      &_l {
+        margin-left: var(--space-l, 24px);
+      }
+    }
+
+  }
+
+  &__block {
+
+  }
+
   //Самый маленький и самый популярный блок pt-icon-plus выравнивает любой графический элемент
   // рядом с контентом.
 }
 
 .section {
-  //  todo: write
   //Контейнер для отделения группы блоков.
+  &_indent-b {
+    &_xxl {
+      margin-bottom: var(--space-xxl, 36px);
+    }
+
+    &_xxxxl {
+      margin-bottom: var(--space-xxxxl, 51px);
+    }
+
+  }
+
+  &_space-v {
+    &_xxl {
+      padding-top: var(--space-xxl, 36px);
+      padding-bottom: var(--space-xxl, 36px);
+    }
+
+    &_xxxxl {
+      padding-top: var(--space-xxxxl, 51px);
+      padding-bottom: var(--space-xxxxl, 51px);
+    }
+  }
 }
 
 //Content layer
 .text {
+  &_align {
+    &_center {
+      text-align: center;
+    }
+  }
+
+  &_size {
+    &_s {
+      font-size: var(--text-height-s);
+      --text-word-width-s: 20px;
+      --text-word-width-m: 48px;
+      --text-word-width-l: 100px;
+      --text-word-height: 8px;
+    }
+
+    &_m {
+      font-size: var(--text-height-m);
+      --text-word-width-s: 24px;
+      --text-word-width-m: 56px;
+      --text-word-width-l: 114px;
+      --text-word-height: 10px;
+    }
+
+    &_l {
+      font-size: var(--text-height-l);
+      --text-word-width-s: 28px;
+      --text-word-width-m: 68px;
+      --text-word-width-l: 138px;
+      --text-word-height: 11px;
+    }
+
+    &_xl {
+      font-size: var(--text-height-xl);
+      --text-word-width-s: 32px;
+      --text-word-width-m: 74px;
+      --text-word-width-l: 154px;
+      --text-word-height: 13px;
+    }
+
+    &_xxl {
+      font-size: var(--text-height-xxl);
+      --text-word-width-s: 36px;
+      --text-word-width-m: 88px;
+      --text-word-width-l: 184px;
+      --text-word-height: 16px;
+    }
+  }
+
+  &_type {
+    &_h1 {
+      margin: 18px 0 24px;
+    }
+
+    &_h2 {
+      margin: 45px 0 21px;
+    }
+
+    &_h3 {
+      margin: 42px 0 0;
+    }
+
+    &_p {
+      margin: 15px 0 21px;
+    }
+  }
+
+  &_view {
+    &_primary {
+      color: var(--text-color-main);
+    }
+
+    &_secondary {
+      color: var(--text-color-secondary);
+    }
+
+    &_ghost {
+      color: var(--text-color-additional);
+    }
+
+    &_link {
+      color: var(--text-color-link);
+    }
+  }
+
+  &__word {
+    height: var(--text-word-height);
+
+    &_width {
+      &_s {
+        width: var(--text-word-width-s);
+      }
+
+      &_m {
+        width: var(--text-word-width-m);
+      }
+
+      &_l {
+        width: var(--text-word-width-l);
+      }
+    }
+  }
+
+  //  todo: figure out what does this for: Количество слов внутри каждой интерфейсной сущности можно взять из файла text-mods.md
 }
 
 .avatar {
+  background-color: var(--text-color-main);
+
+  &_size {
+    &_m {
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
 
 .brand-logo {
+  &_name {
+    &_blue {
+      background-color: #5dcdf9;
+    }
+
+    &_green {
+      background-color: #23b324;
+    }
+
+    &_red {
+      background-color: #ff3333;
+    }
+
+    &_purple {
+      background-color: #c62cff;
+    }
+  }
+
+  &_size {
+    &_xxs {
+      width: 24px;
+      height: 24px;
+    }
+
+    &_xs {
+      width: 32px;
+      height: 32px;
+    }
+
+    &_s {
+      width: 40px;
+      height: 40px;
+    }
+
+    &_m {
+      width: 60px;
+      height: 60px;
+    }
+
+    &_l {
+      width: 80px;
+      height: 80px;
+    }
+  }
 }
 
 .placeholder {
+  background-color: var(--text-color-main);
+
+  &_size {
+    &_m {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  &_view {
+    &_primary {
+      background-color: var(--text-color-main);
+    }
+  }
 }
 
 .button {
+  background-color: var(--block-background-color-highlighted);
+
+  &_size {
+    &_s {
+      width: 200px;
+      height: 24px;
+    }
+
+    &_m {
+      width: 200px;
+      height: 32px;
+    }
+
+    &_l {
+      width: 200px;
+      height: 42px;
+    }
+
+    &_xl {
+      width: 200px;
+      height: 56px;
+    }
+
+    &_xxl {
+      width: 200px;
+      height: 64px;
+    }
+  }
+
+  &_width {
+    &_full {
+      width: 100%;
+    }
+  }
+
 }
 
 .input {
+  border-width: 3px;
+
+  &_size {
+    width: 100%;
+
+    &_s {
+      height: 24px;
+    }
+
+    &_m {
+      height: 32px;
+    }
+
+    &_l {
+      height: 42px;
+    }
+
+    &_xl {
+      height: 56px;
+    }
+
+    &_xxl {
+      height: 64px;
+    }
+  }
+
 }
 
 .image {
+  width: 100%;
+  border: 3px solid var(--block-background-color-border);
+  background-color: var(--block-background-color-main);
+  color: var(--text-color-main);
 }
 
 .accordion {
