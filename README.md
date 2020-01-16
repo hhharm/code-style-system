@@ -6,4 +6,5 @@ What I  used:
 
 <!-- npm install -g sass -->
 - scss because it's awesome for BEM (nesting, mixins)
-- css variables. Because they are neat :3
+- css variables. Because they are sweet :3
+- sass-autoprefixer for cross browser compatible css

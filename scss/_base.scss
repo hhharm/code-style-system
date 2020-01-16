@@ -148,13 +148,15 @@
 
 .grid {
   display: grid;
+  //todo: delete?
+  //width: 1024px;
 
   &_m-columns {
     //todo: understand what is required. screen-m, screen width, 1024... ???
     //Ширина экрана screen-m совпадает с шириной брейкпойнта и равна 1024px.
     //Количество возможных колонок при ширине экрана screen-m
     &_12 {
-      //todo: check that this works as expected
+      //col start is name of the column - see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
       grid-template-columns: repeat(12, 1fr);
     }
 
@@ -185,39 +187,38 @@
     //todo: check that this works as expected
     //Отступ между строками
     &_full {
-    {
       grid-row-gap: 100%;
     }
 
-      &_half {
-        grid-row-gap: 50%;
-      }
-
+    &_half {
+      grid-row-gap: 50%;
     }
 
-    &__fraction {
-      //todo: check that this works as expected
-      //  Колоночный элемент c шириной в несколько колонок
-      &_m-col {
-        &_2 {
-          grid-column: span 2;
-        }
+  }
 
-        &_3 {
-          grid-column: span 3;
-        }
+  &__fraction {
+    //  Колоночный элемент c шириной в несколько колонок
+    display: grid;
 
-        &_4 {
-          grid-column: span 4;
-        }
+    &_m-col {
+      &_2 {
+        grid-column: span 2;
+      }
 
-        &_5 {
-          grid-column: span 5;
-        }
+      &_3 {
+        grid-column: span 3;
+      }
 
-        &_8 {
-          grid-column: span 8;
-        }
+      &_4 {
+        grid-column: span 4;
+      }
+
+      &_5 {
+        grid-column: span 5;
+      }
+
+      &_8 {
+        grid-column: span 8;
       }
     }
   }
@@ -226,7 +227,7 @@
 //patterns layer
 .card {
   //todo: check if really flex
-  display: flex;
+  //display: flex;
   //  Блок card — карточка для представления информации в компактном формате.
   &_border {
     &_all {
@@ -245,13 +246,17 @@
     &_distribute {
       &_center {
         //todo: check what should be there
-        justify-content: center;
+        //display: flex;
+        //justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
     &_vertical-align {
       &_center {
-        vertical-align: middle;
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -287,31 +292,37 @@
     &_distribute {
       &_center {
         //todo: check what should be there
+        display: flex;
         justify-content: center;
       }
 
       &_between {
         //todo: check what should be there
+        display: flex;
         justify-content: space-between;
       }
 
       &_right {
         //todo: check what should be there
+        display: flex;
         justify-content: right;
       }
     }
 
     &_vertical-align {
       &_center {
-        vertical-align: middle;
+        display: flex;
+        align-items: center;
       }
 
       &_top {
-        vertical-align: top;
+        display: flex;
+        align-items: start;
       }
 
       &_bottom {
-        vertical-align: bottom;
+        display: flex;
+        align-items: end;
       }
     }
 
@@ -352,6 +363,8 @@
   }
 
   &__item {
+    display: flex;
+    flex-shrink: 0;
     &_border {
       &_bottom {
         //  todo: there is no description !! ???
@@ -359,9 +372,18 @@
       }
     }
 
+    &_distribute {
+      &_between {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-between;
+      }
+    }
+
     &_vertical-align {
       &_center {
-        vertical-align: middle;
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -411,92 +433,51 @@
       &_xxxs {
         padding-left: var(--space-xxxs, 3px);
         padding-right: var(--space-xxxs, 3px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxs {
         padding-left: var(--space-xxs, 6px);
         padding-right: var(--space-xxs, 6px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xs {
         padding-left: var(--space-xs, 9px);
         padding-right: var(--space-xs, 9px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_s {
         padding-left: var(--space-s, 15px);
         padding-right: var(--space-s, 15px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_m {
         padding-left: var(--space-m, 18px);
         padding-right: var(--space-m, 18px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_l {
         padding-left: var(--space-l, 24px);
         padding-right: var(--space-l, 24px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xl {
         padding-left: var(--space-xl, 27px);
         padding-right: var(--space-xl, 27px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxl {
         padding-left: var(--space-xxl, 36px);
         padding-right: var(--space-xxl, 36px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxxl {
         padding-left: var(--space-xxxl, 45px);
         padding-right: var(--space-xxxl, 45px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxxxl {
         padding-left: var(--space-xxxxl, 51px);
         padding-right: var(--space-xxxxl, 51px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
-
       }
     }
 
@@ -504,82 +485,46 @@
       &_xxxs {
         padding-top: var(--space-xxxs, 3px);
         padding-bottom: var(--space-xxxs, 3px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxs {
         padding-top: var(--space-xxs, 6px);
         padding-bottom: var(--space-xxs, 6px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xs {
         padding-top: var(--space-xs, 9px);
         padding-bottom: var(--space-xs, 9px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_s {
         padding-top: var(--space-s, 15px);
         padding-bottom: var(--space-s, 15px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_m {
         padding-top: var(--space-m, 18px);
         padding-bottom: var(--space-m, 18px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_l {
         padding-top: var(--space-l, 24px);
         padding-bottom: var(--space-l, 24px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xl {
         padding-top: var(--space-xl, 27px);
         padding-bottom: var(--space-xl, 27px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxl {
         padding-top: var(--space-xxl, 36px);
         padding-bottom: var(--space-xxl, 36px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxxl {
         padding-top: var(--space-xxxl, 45px);
         padding-bottom: var(--space-xxxl, 45px);
-
-        &.form__item_border_bottom {
-          border-bottom: none;
-        }
       }
 
       &_xxxxl {
@@ -627,16 +572,19 @@
     &_distribute {
       &_center {
         //todo: check what should be there
+        display: flex;
         justify-content: center;
       }
 
       &_between {
         //todo: check what should be there
+        display: flex;
         justify-content: space-between;
       }
 
       &_default {
         //todo: check what should be there
+        display: flex;
         justify-content: normal;
       }
     }
@@ -657,16 +605,19 @@
     &_distribute {
       &_center {
         //todo: check what should be there
+        display: flex;
         justify-content: center;
       }
 
       &_between {
         //todo: check what should be there
+        display: flex;
         justify-content: space-between;
       }
 
       &_default {
         //todo: check what should be there
+        display: flex;
         justify-content: normal;
       }
     }
@@ -716,13 +667,15 @@
     &_distribute {
       &_between {
         //todo: check what should be there
+        display: flex;
         justify-content: space-between;
       }
     }
 
     &_vertical-align {
       &_center {
-        vertical-align: middle;
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -768,7 +721,8 @@
 .icon-plus {
   &_vertical-align {
     &_center {
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -829,13 +783,17 @@
 .text {
   &_align {
     &_center {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 
   &_size {
     &_s {
-      font-size: var(--text-height-s);
+      min-height: var(--text-height-s);
+      margin-bottom: var(--text-line-space-s);
+      --text-margin-bottom: var(--text-line-space-s);
       --text-word-width-s: 20px;
       --text-word-width-m: 48px;
       --text-word-width-l: 100px;
@@ -843,7 +801,9 @@
     }
 
     &_m {
-      font-size: var(--text-height-m);
+      min-height: var(--text-height-m);
+      margin-bottom: var(--text-line-space-m);
+      --text-margin-bottom: var(--text-line-space-m);
       --text-word-width-s: 24px;
       --text-word-width-m: 56px;
       --text-word-width-l: 114px;
@@ -851,7 +811,9 @@
     }
 
     &_l {
-      font-size: var(--text-height-l);
+      min-height: var(--text-height-l);
+      margin-bottom: var(--text-line-space-l);
+      --text-margin-bottom: var(--text-line-space-l);
       --text-word-width-s: 28px;
       --text-word-width-m: 68px;
       --text-word-width-l: 138px;
@@ -859,7 +821,9 @@
     }
 
     &_xl {
-      font-size: var(--text-height-xl);
+      min-height: var(--text-height-xl);
+      margin-bottom: var(--text-line-space-xl);
+      --text-margin-bottom: var(--text-line-space-xl);
       --text-word-width-s: 32px;
       --text-word-width-m: 74px;
       --text-word-width-l: 154px;
@@ -867,7 +831,9 @@
     }
 
     &_xxl {
-      font-size: var(--text-height-xxl);
+      min-height: var(--text-height-xxl);
+      margin-bottom: var(--text-line-space-xxl);
+      --text-margin-bottom: var(--text-line-space-xxl);
       --text-word-width-s: 36px;
       --text-word-width-m: 88px;
       --text-word-width-l: 184px;
@@ -895,24 +861,27 @@
 
   &_view {
     &_primary {
-      color: var(--text-color-main);
+      --color: var(--text-color-main);
     }
 
     &_secondary {
-      color: var(--text-color-secondary);
+      --color: var(--text-color-secondary);
     }
 
     &_ghost {
-      color: var(--text-color-additional);
+      --color: var(--text-color-additional);
     }
 
     &_link {
-      color: var(--text-color-link);
+      --color: var(--text-color-link);
     }
   }
 
   &__word {
+    background-color: var(--color);
     height: var(--text-word-height);
+    //margin-bottom: var(--text-margin-bottom);
+    display: inline-block;
 
     &_width {
       &_s {
@@ -992,6 +961,7 @@
 
 .placeholder {
   background-color: var(--text-color-main);
+  flex-shrink: 0;
 
   &_size {
     &_m {
@@ -1047,10 +1017,8 @@
 
 .input {
   border-width: 3px;
-
+  width: 100%;
   &_size {
-    width: 100%;
-
     &_s {
       height: 24px;
     }
