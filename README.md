@@ -7,4 +7,5 @@ What I  used:
 <!-- npm install -g sass -->
 - scss because it's awesome for BEM (nesting, mixins)
 - css variables. Because they are sweet :3
-- sass-autoprefixer for cross browser compatible css
+- autoprefixer for cross browser: https://autoprefixer.github.io/ru/
+- minimizer for smaller sime: https://csscompressor.com/

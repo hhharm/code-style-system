@@ -4,7 +4,8 @@
   &_color {
     &_project-default {
       //Значения фонов блоков:
-      --block-background-color-main: #FFFFFF;
+      --block-background-color-main: #ffffff;
+      --block-background-color-main-hover: #e1e1e1;
       --block-background-color-highlighted: #ffcc00;
       --block-background-color-border: #000000;
       //Значения состояний текста:
@@ -17,6 +18,7 @@
     &_project-brand {
       //Значения фонов блоков:
       --block-background-color-main: #0077ff;
+      --block-background-color-main-hover: #0073e1;
       --block-background-color-highlighted: #FFFFFF;
       --block-background-color-border: #FFFFFF;
       //Значения состояний текста:
@@ -29,6 +31,7 @@
     &_project-inverse {
       //Значения фонов блоков:
       --block-background-color-main: #000000;
+      --block-background-color-main-hover: #1e1e1e;
       --block-background-color-highlighted: #FFFFFF;
       --block-background-color-border: #FFFFFF;
       //Значения состояний текста:
@@ -40,7 +43,8 @@
 
     &_project-warning {
       //Значения фонов блоков:
-      --block-background-color-main: #ff3333;
+      --block-background-color-main: #ff3333;;
+      --block-background-color-main-hover: #E12D2D;
       --block-background-color-highlighted: #FFFFFF;
       --block-background-color-border: #ff3333;
       //Значения состояний текста:
@@ -101,46 +105,49 @@
 
 //frame layer
 .layout {
+  width: 100%;
+
   &__container {
+    background-color: var(--block-background-color-main);
+
     &_align {
       &_center {
         //  Выравнивание контейнера по горизонтали
-        //todo: check that works correctly
         margin-left: auto;
         margin-right: auto;
       }
+    }
 
-      &_size {
-        //Максимальная ширина контейнера
-        &_s {
-          max-width: 920px;
-        }
-
-        &_m {
-          max-width: 1280px;
-        }
+    &_size {
+      //Максимальная ширина контейнера
+      &_s {
+        max-width: 920px;
       }
 
-      &_space-v {
-        &_xxxxl {
-          padding-top: var(--space-xxxxl, 51px);
-          padding-bottom: var(--space-xxxxl, 51px);
-        }
+      &_m {
+        max-width: 1280px;
+      }
+    }
 
-        &_xxxxxl {
-          padding-top: var(--space-xxxxxl, 72px);
-          padding-bottom: var(--space-xxxxxl, 72px);
-        }
+    &_space-v {
+      &_xxxxl {
+        padding-top: var(--space-xxxxl, 51px);
+        padding-bottom: var(--space-xxxxl, 51px);
       }
 
-      &_indent-b {
-        &_xxl {
-          margin-bottom: var(--space-xxl, 36px);
-        }
+      &_xxxxxl {
+        padding-top: var(--space-xxxxxl, 72px);
+        padding-bottom: var(--space-xxxxxl, 72px);
+      }
+    }
 
-        &_xxxxl {
-          margin-bottom: var(--space-xxxxl, 51px);
-        }
+    &_indent-b {
+      &_xxl {
+        margin-bottom: var(--space-xxl, 36px);
+      }
+
+      &_xxxxl {
+        margin-bottom: var(--space-xxxxl, 51px);
       }
     }
   }
@@ -148,8 +155,7 @@
 
 .grid {
   display: grid;
-  //todo: delete?
-  //width: 1024px;
+  width: 100%;
 
   &_m-columns {
     //todo: understand what is required. screen-m, screen width, 1024... ???
@@ -171,15 +177,15 @@
     //todo: check that this works as expected
     //  Отступ между колонками
     &_two-thirds {
-      grid-column-gap: 66%;
+      grid-column-gap: calc(var(--gap-size) * 2 / 3);
     }
 
     &_full {
-      grid-column-gap: 100%;
+      grid-column-gap: var(--gap-size);
     }
 
     &_half {
-      grid-column-gap: 50%;
+      grid-column-gap: calc(var(--gap-size) / 2);
     }
   }
 
@@ -187,11 +193,11 @@
     //todo: check that this works as expected
     //Отступ между строками
     &_full {
-      grid-row-gap: 100%;
+      grid-row-gap: var(--gap-size);
     }
 
     &_half {
-      grid-row-gap: 50%;
+      grid-row-gap: calc(var(--gap-size) / 2);
     }
 
   }
@@ -365,6 +371,7 @@
   &__item {
     display: flex;
     flex-shrink: 0;
+
     &_border {
       &_bottom {
         //  todo: there is no description !! ???
@@ -544,6 +551,10 @@
         width: 35%;
       }
     }
+
+    &.text {
+      margin-bottom: 0;
+    }
   }
 
   &__control {
@@ -654,12 +665,10 @@
 
     &_border {
       &_bottom {
-        //  todo: there is no description !! ???
         border-bottom: 3px solid var(--block-background-color-border);
       }
 
       &_top {
-        //  todo: there is no description !! ???
         border-top: 3px solid var(--block-background-color-border);
       }
     }
@@ -783,17 +792,13 @@
 .text {
   &_align {
     &_center {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      text-align: center;
     }
   }
 
   &_size {
     &_s {
       min-height: var(--text-height-s);
-      margin-bottom: var(--text-line-space-s);
-      --text-margin-bottom: var(--text-line-space-s);
       --text-word-width-s: 20px;
       --text-word-width-m: 48px;
       --text-word-width-l: 100px;
@@ -802,8 +807,6 @@
 
     &_m {
       min-height: var(--text-height-m);
-      margin-bottom: var(--text-line-space-m);
-      --text-margin-bottom: var(--text-line-space-m);
       --text-word-width-s: 24px;
       --text-word-width-m: 56px;
       --text-word-width-l: 114px;
@@ -812,8 +815,6 @@
 
     &_l {
       min-height: var(--text-height-l);
-      margin-bottom: var(--text-line-space-l);
-      --text-margin-bottom: var(--text-line-space-l);
       --text-word-width-s: 28px;
       --text-word-width-m: 68px;
       --text-word-width-l: 138px;
@@ -822,8 +823,6 @@
 
     &_xl {
       min-height: var(--text-height-xl);
-      margin-bottom: var(--text-line-space-xl);
-      --text-margin-bottom: var(--text-line-space-xl);
       --text-word-width-s: 32px;
       --text-word-width-m: 74px;
       --text-word-width-l: 154px;
@@ -832,8 +831,6 @@
 
     &_xxl {
       min-height: var(--text-height-xxl);
-      margin-bottom: var(--text-line-space-xxl);
-      --text-margin-bottom: var(--text-line-space-xxl);
       --text-word-width-s: 36px;
       --text-word-width-m: 88px;
       --text-word-width-l: 184px;
@@ -880,7 +877,7 @@
   &__word {
     background-color: var(--color);
     height: var(--text-word-height);
-    //margin-bottom: var(--text-margin-bottom);
+    //margin-bottom: var;
     display: inline-block;
 
     &_width {
@@ -1018,6 +1015,7 @@
 .input {
   border-width: 3px;
   width: 100%;
+
   &_size {
     &_s {
       height: 24px;
@@ -1049,6 +1047,33 @@
   color: var(--text-color-main);
 }
 
-.accordion {
-  //  css implementation was in 2019 shri
+.e-accordion {
+  background-color: var(--block-background-color-main);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--block-background-color-main-hover);
+  }
+
+  &__short {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__more {
+    transition: all 0.2s linear;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+
+    &_state {
+      &_open {
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
+      }
+    }
+  }
 }
+

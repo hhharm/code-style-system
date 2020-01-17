@@ -8,6 +8,7 @@
     flex-wrap: wrap;
 
     & .form__control {
+      border-color: var(--text-color-main);
       border-style: solid;
       flex-grow: 1;
     }
@@ -51,7 +52,14 @@
 
 .history {
   border-width: 3px;
-  //  todo: do
+
+  &__details {
+    display: flex;
+  }
+
+  &__time {
+    margin: auto;
+  }
 }
 
 .cover {
@@ -108,10 +116,14 @@
 }
 
 .header {
-  //Todo: padding or margin?  значения вертикальных отступов: xxxl — вертикальный, --gap горизонтальный;
-  margin: var(--space-xxxl) var(--gap-size);
+  padding-bottom: var(--space-xxxl);
+  padding-top: var(--gap-size);
   max-width: 1280px;
   box-sizing: content-box;
+  background-color: var(--block-background-color-main);
+  border-color: var(--block-background-color-border);
+  margin-left: auto;
+  margin-right: auto;
 
   &__logo {
     width: 179px;
@@ -143,13 +155,14 @@
     width: 24px;
     height: 24px;
     background-color: var(--switch-color);
+    transition: margin-left 0.5s;
+    margin-left: 0;
   }
 
   &_checked {
     & .onoffswitch__button {
-      //todo: add animation
-      margin-left: auto;
-      transition: all 0.2s linear;
+      //calc because transition doesn't work with auto
+      margin-left: calc(100% - 25px);
       //@extend .theme_color_project-default;
     }
   }
@@ -157,8 +170,18 @@
 }
 
 .footer {
-  //Todo: padding or margin?  значения вертикальных отступов: xxxl — вертикальный, --gap горизонтальный;
-  padding: var(--space-xxxl) var(--gap-size);
+  background-color: var(--block-background-color-main);
+  border-color: var(--block-background-color-border);
+  margin: var(--space-xxxl) auto var(--gap-size);
   max-width: 1280px;
   box-sizing: content-box;
+  //todo: text has broken, lol
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.page {
+  background-color: var(--block-background-color-main);
 }
