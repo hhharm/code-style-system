@@ -55,7 +55,6 @@
     }
   }
 
-  //&_space { todo: or size??
   &_size {
     &_default {
       //Значения размеров высоты текста (так как в задании текст в виде линий):
@@ -74,7 +73,6 @@
     }
   }
 
-  //&_size { todo: or space??
   &_space {
     &_default {
       //Пример размеров отступов:
@@ -167,7 +165,6 @@
     }
 
     &_10 {
-      //todo: check that this works as expected
       grid-template-columns: repeat(10, 1fr);
     }
 
@@ -190,7 +187,6 @@
   }
 
   &_row-gap {
-    //todo: check that this works as expected
     //Отступ между строками
     &_full {
       grid-row-gap: var(--gap-size);
@@ -232,8 +228,6 @@
 
 //patterns layer
 .card {
-  //todo: check if really flex
-  //display: flex;
   //  Блок card — карточка для представления информации в компактном формате.
   &_border {
     &_all {
@@ -251,9 +245,6 @@
   &__content {
     &_distribute {
       &_center {
-        //todo: check what should be there
-        //display: flex;
-        //justify-content: center;
         margin-left: auto;
         margin-right: auto;
       }
@@ -291,25 +282,21 @@
   }
 
   &__footer {
-    //todo: check if really absolute
     position: absolute;
     bottom: 0;
 
     &_distribute {
       &_center {
-        //todo: check what should be there
         display: flex;
         justify-content: center;
       }
 
       &_between {
-        //todo: check what should be there
         display: flex;
         justify-content: space-between;
       }
 
       &_right {
-        //todo: check what should be there
         display: flex;
         justify-content: right;
       }
@@ -374,7 +361,6 @@
 
     &_border {
       &_bottom {
-        //  todo: there is no description !! ???
         border-bottom: 3px solid var(--block-background-color-border);
       }
     }
@@ -563,7 +549,6 @@
 }
 
 .informer {
-  //  todo: write
   //Информационный блок, имеющий статус. Нужное оформление достигается путём миксования к нему блока
   // темы со статусным значением цветового модификатора (например, theme_color_project-warning).
 
@@ -582,19 +567,16 @@
   &__content {
     &_distribute {
       &_center {
-        //todo: check what should be there
         display: flex;
         justify-content: center;
       }
 
       &_between {
-        //todo: check what should be there
         display: flex;
         justify-content: space-between;
       }
 
       &_default {
-        //todo: check what should be there
         display: flex;
         justify-content: normal;
       }
@@ -615,19 +597,16 @@
   &__action {
     &_distribute {
       &_center {
-        //todo: check what should be there
         display: flex;
         justify-content: center;
       }
 
       &_between {
-        //todo: check what should be there
         display: flex;
         justify-content: space-between;
       }
 
       &_default {
-        //todo: check what should be there
         display: flex;
         justify-content: normal;
       }
@@ -675,7 +654,6 @@
 
     &_distribute {
       &_between {
-        //todo: check what should be there
         display: flex;
         justify-content: space-between;
       }
@@ -894,8 +872,6 @@
       }
     }
   }
-
-  //  todo: figure out what does this for: Количество слов внутри каждой интерфейсной сущности можно взять из файла text-mods.md
 }
 
 .avatar {
