@@ -832,6 +832,7 @@
 .e-accordion__short {
   display: flex;
   justify-content: space-between;
+
 }
 
 .e-accordion__more {

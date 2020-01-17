@@ -2,10 +2,18 @@
 
 .payment {
   border-width: 3px;
-  //todo: something wrong with spacing((
+
+  &__header {
+    & .text {
+      --text-line-space: 10px;
+      padding-bottom: var(--text-height-s);
+    }
+  }
+
   &__content {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: var(--space-m);
 
     & .form__control {
       border-color: var(--text-color-main);
@@ -23,18 +31,33 @@
     align-items: center;
   }
 
+  & .text {
+    --text-line-space: var(--space-m);
+  }
+
   & .placeholder {
-    margin: var(--space-m) auto;
+    margin: var(--space-m) auto var(--text-height-m);
+  }
+
+  &__button-wrapper {
+    padding-top: var(--space-xxl);
   }
 }
 
 .product {
   position: relative;
-  min-height: 300px;
+  min-height: 297px;
   border-width: 3px;
 
   &__title {
-    margin-bottom: var(--space-xxxl);
+    padding-top: 1px;
+    margin-bottom: 57px;
+    --text-line-space: 0;
+  }
+
+  &__footer {
+
+    padding-bottom: var(--space-l);
   }
 
   &__image {
@@ -57,12 +80,27 @@
 .history {
   border-width: 3px;
 
+  &__transaction {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &__details {
     display: flex;
   }
 
   &__time {
     margin: auto;
+  }
+
+  &__label {
+    --text-line-space: 0;
+  }
+
+  &__quantity {
+    & .text {
+      --text-line-space: 0;
+    }
   }
 }
 
@@ -90,6 +128,7 @@
   &__footer {
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 40px;
   }
 }
 
@@ -103,7 +142,7 @@
 
   &__preview {
     display: flex;
-    margin-bottom: var(--space-xxl);
+    margin-bottom: var(--space-l);
 
     & .avatar {
       margin-right: var(--space-xs);
@@ -111,14 +150,16 @@
   }
 
   &__title {
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-l);
   }
-
-  //todo: smth with text spaces
 
   &__footer {
     width: 100%;
     box-sizing: border-box;
+
+    & .text {
+      margin-bottom: var(--text-height-m);
+    }
   }
 }
 
@@ -180,6 +221,7 @@
   border-color: var(--block-background-color-border);
   margin: var(--space-xxxl) auto var(--gap-size);
   max-width: 1280px;
+
   &__content {
     display: flex;
     justify-content: space-between;

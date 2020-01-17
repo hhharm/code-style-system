@@ -156,9 +156,6 @@
   width: 100%;
 
   &_m-columns {
-    //todo: understand what is required. screen-m, screen width, 1024... ???
-    //Ширина экрана screen-m совпадает с шириной брейкпойнта и равна 1024px.
-    //Количество возможных колонок при ширине экрана screen-m
     &_12 {
       //col start is name of the column - see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
       grid-template-columns: repeat(12, 1fr);
@@ -171,7 +168,6 @@
   }
 
   &_col-gap {
-    //todo: check that this works as expected
     //  Отступ между колонками
     &_two-thirds {
       grid-column-gap: calc(var(--gap-size) * 2 / 3);
@@ -202,25 +198,34 @@
     //  Колоночный элемент c шириной в несколько колонок
     display: grid;
 
+    grid-column: 1 / -1;
     &_m-col {
-      &_2 {
-        grid-column: span 2;
+      &_2, &_3, &_4, &_5, &_8 {
+        grid-column: 1 / -1;
       }
+    }
 
-      &_3 {
-        grid-column: span 3;
-      }
+    @media (min-width: 1024px) {
+      &_m-col {
+        &_2 {
+          grid-column: span 2;
+        }
 
-      &_4 {
-        grid-column: span 4;
-      }
+        &_3 {
+          grid-column: span 3;
+        }
 
-      &_5 {
-        grid-column: span 5;
-      }
+        &_4 {
+          grid-column: span 4;
+        }
 
-      &_8 {
-        grid-column: span 8;
+        &_5 {
+          grid-column: span 5;
+        }
+
+        &_8 {
+          grid-column: span 8;
+        }
       }
     }
   }
@@ -406,7 +411,8 @@
       }
 
       &_xl {
-        margin-bottom: var(--space-xl, 27px);
+        //margin-bottom: var(--space-xl, 27px);
+        margin-bottom: calc(var(--space-xl) + 1px);
       }
 
       &_xxl {
@@ -478,46 +484,82 @@
       &_xxxs {
         padding-top: var(--space-xxxs, 3px);
         padding-bottom: var(--space-xxxs, 3px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xxs {
         padding-top: var(--space-xxs, 6px);
         padding-bottom: var(--space-xxs, 6px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xs {
         padding-top: var(--space-xs, 9px);
         padding-bottom: var(--space-xs, 9px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_s {
         padding-top: var(--space-s, 15px);
         padding-bottom: var(--space-s, 15px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_m {
         padding-top: var(--space-m, 18px);
         padding-bottom: var(--space-m, 18px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_l {
         padding-top: var(--space-l, 24px);
         padding-bottom: var(--space-l, 24px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xl {
         padding-top: var(--space-xl, 27px);
         padding-bottom: var(--space-xl, 27px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xxl {
         padding-top: var(--space-xxl, 36px);
         padding-bottom: var(--space-xxl, 36px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xxxl {
         padding-top: var(--space-xxxl, 45px);
         padding-bottom: var(--space-xxxl, 45px);
+
+        &.form__item_border_bottom {
+          //padding-bottom: 0;
+        }
       }
 
       &_xxxxl {
@@ -525,7 +567,7 @@
         padding-bottom: var(--space-xxxxl, 51px);
 
         &.form__item_border_bottom {
-          border-bottom: none;
+          //padding-bottom: 0;
         }
       }
     }
@@ -645,6 +687,10 @@
     &_border {
       &_bottom {
         border-bottom: 3px solid var(--block-background-color-border);
+
+        .list_border_all &:last-child {
+          border-bottom: none;
+        }
       }
 
       &_top {
@@ -749,7 +795,7 @@
 
     &_xxxxl {
       //margin-bottom: var(--space-xxxxl, 51px);
-      margin-bottom: 62px;
+      margin-bottom: 57px;
     }
 
   }
@@ -791,7 +837,7 @@
       --text-word-width-m: 56px;
       --text-word-width-l: 114px;
       --text-word-height: 10px;
-      --text-line-space: var(--text-word-height);
+      --text-line-space: var(--text-height-l);
     }
 
     &_l {
@@ -824,11 +870,14 @@
 
   &_type {
     &_h1 {
-      margin: 18px 0 24px;
+      //margin: 18px 0 24px;
+      margin: 10px 0 28px;
     }
 
     &_h2 {
       margin: 45px 0 21px;
+      padding-top: 3px;
+      padding-bottom: 5px;
     }
 
     &_h3 {
@@ -1011,7 +1060,8 @@
     }
 
     &_l {
-      height: 42px;
+      //height: 42px;
+      height: 37px;
     }
 
     &_xl {
@@ -1040,10 +1090,10 @@
     background-color: var(--block-background-color-main-hover);
   }
 
+  margin-top: var(--space-s);
   &__short {
     display: flex;
     justify-content: space-between;
-
   }
 
   &__more {
