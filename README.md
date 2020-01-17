@@ -6,4 +6,4 @@ What I  used:
 - scss because it's awesome for BEM (nesting, mixins)
 - css variables. Because they are sweet :3
 - autoprefixer for cross browser: https://autoprefixer.github.io/ru/
-- minimizer for smaller sime: https://csscompressor.com/
+- minimizer for smaller size: https://csscompressor.com/

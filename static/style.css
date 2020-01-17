@@ -157,7 +157,7 @@
 }
 
 .card_border_all {
-  border: 1px solid var(--block-background-color-border);
+  border: 3px solid var(--block-background-color-border);
 }
 .card_view_default {
   background-color: var(--block-background-color-main);

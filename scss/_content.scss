@@ -25,7 +25,6 @@
 
 .warning {
   min-height: 335px;
-  //todo: space between text & placeholder
   &__content {
     flex-direction: column;
     align-items: center;
@@ -46,7 +45,7 @@
 
 .product {
   position: relative;
-  min-height: 297px;
+  min-height: 295px;
   border-width: 3px;
 
   &__title {

@@ -236,8 +236,7 @@
   //  Блок card — карточка для представления информации в компактном формате.
   &_border {
     &_all {
-      //todo: check that really 1px
-      border: 1px solid var(--block-background-color-border);
+      border: 3px solid var(--block-background-color-border);
     }
   }
 
