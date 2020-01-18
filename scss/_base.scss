@@ -74,23 +74,22 @@
     &_default {
       //Значения размеров высоты текста (так как в задании текст в виде линий):
       --text-height-s: 8px;
-      --text-height-m: 10px;
+      --text-height-m: 11px;
       --text-height-l: 11px;
       --text-height-xl: 13px;
       --text-height-xxl: 16px;
 
       //Значения межстрочных интервалов:
-      --text-line-space-s: 21px;
-      --text-line-space-m: 25px;
-      --text-line-space-l: 28px;
-      --text-line-space-xl: 34px;
-      --text-line-space-xxl: 38px;
+      --text-line-space-s: 18px;
+      --text-line-space-m: 10px;
+      --text-line-space-l: 12px;
+      --text-line-space-xl: 16px;
+      --text-line-space-xxl: 18px;
     }
   }
 
   &_space {
     &_default {
-      //Пример размеров отступов:
       --space-xxxs: 3px;
       --space-xxs: 6px;
       --space-xs: 9px;
@@ -100,17 +99,17 @@
       --space-xl: 27px;
       --space-xxl: 36px;
       --space-xxxl: 45px;
-      --space-xxxxl: 51px;
+      --space-xxxxl: 48px;
       --space-xxxxxl: 72px;
     }
   }
 
   &_gap_small {
     //todo: check it's usage  модификатор на отступ между колонками и отступами в сетке
-    --gap-size: var(--space-s);
+    --gap: var(--space-s);
 
     @media (min-width: 1024px) {
-      --gap-size: var(--space-xl);
+      --gap: var(--space-xl);
     }
   }
 }
@@ -185,26 +184,26 @@
   &_col-gap {
     //  Отступ между колонками
     &_two-thirds {
-      grid-column-gap: calc(var(--gap-size) * 2 / 3);
+      grid-column-gap: calc(var(--gap) * 2 / 3);
     }
 
     &_full {
-      grid-column-gap: var(--gap-size);
+      grid-column-gap: var(--gap);
     }
 
     &_half {
-      grid-column-gap: calc(var(--gap-size) / 2);
+      grid-column-gap: calc(var(--gap) / 2);
     }
   }
 
   &_row-gap {
     //Отступ между строками
     &_full {
-      grid-row-gap: var(--gap-size);
+      grid-row-gap: var(--gap);
     }
 
     &_half {
-      grid-row-gap: calc(var(--gap-size) / 2);
+      grid-row-gap: calc(var(--gap) / 2);
     }
 
   }
@@ -212,6 +211,7 @@
   &__fraction {
     //  Колоночный элемент c шириной в несколько колонок
     display: grid;
+    align-self: start;
 
     //for mobile
     grid-column: 1 / -1;
@@ -563,9 +563,9 @@
       }
     }
 
-    &.text {
-      margin-bottom: 0;
-    }
+    //&.text {
+    //  margin-bottom: 0;
+    //}
   }
 
   &__control {
@@ -854,11 +854,11 @@
 
   &_type {
     &_h1 {
-      margin: 18px 0 24px;
+      margin: 16px 0 28px;
     }
 
     &_h2 {
-      margin: 45px 0 21px;
+      margin: 44px 0 24px;
     }
 
     &_h3 {
@@ -1035,7 +1035,8 @@
     }
 
     &_l {
-      height: 42px;
+      //height: 42px;
+      height: 38px;
     }
 
     &_xl {
