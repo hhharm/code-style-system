@@ -53,7 +53,7 @@
   --text-height-xxl: 16px;
   --text-line-space-s: 18px;
   --text-line-space-m: 10px;
-  --text-line-space-l: 12px;
+  --text-line-space-l: 13px;
   --text-line-space-xl: 16px;
   --text-line-space-xxl: 18px;
 }
@@ -63,7 +63,7 @@
   --space-xs: 9px;
   --space-s: 15px;
   --space-m: 18px;
-  --space-l: 24px;
+  --space-l: 25px;
   --space-xl: 27px;
   --space-xxl: 36px;
   --space-xxxl: 45px;
@@ -612,6 +612,9 @@
   margin: calc(var(--text-line-space) / 2) 0;
   display: inline-block;
 }
+.text_size_s .text__word {
+  margin-top: var(--space-xxs);
+}
 .text__word_width_s {
   width: var(--text-word-width-s);
 }
@@ -733,6 +736,8 @@
 .e-accordion {
   background-color: var(--block-background-color-main);
   cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .e-accordion:hover {
   background-color: var(--block-background-color-main-hover);
@@ -756,6 +761,9 @@
 .payment {
   border-width: 3px;
 }
+.payment__content {
+  padding-bottom: 16px;
+}
 .payment__content .form__control {
   border-color: var(--text-color-main);
   border-style: solid;
@@ -768,6 +776,10 @@
 .warning {
   min-height: 335px;
 }
+.warning__content {
+  --text-line-space-xl: 20px;
+  margin-bottom: var(--space-xs);
+}
 .warning .text {
   flex-basis: 100%;
 }
@@ -778,14 +790,11 @@
 .product {
   min-height: 300px;
   border-width: 3px;
-  margin-bottom: var(--space-xxs);
 }
-
 .product__title {
   margin-bottom: var(--space-xxxl);
   margin-top: 4px;
 }
-
 .product__footer {
   padding-bottom: var(--space-xs);
 }
@@ -802,6 +811,12 @@
   display: flex;
   flex-grow: 1;
 }
+.history__time {
+  padding: 12px 0;
+}
+.history__time .text__word {
+  margin: 0;
+}
 .cover {
   min-height: 472px;
 }
@@ -814,7 +829,9 @@
 }
 .event {
   min-height: 400px;
-  position: relative;
+}
+.event__description {
+  --text-line-space-l: 17px;
 }
 .event__preview {
   display: flex;
@@ -826,8 +843,12 @@
   margin-right: var(--space-xs);
 }
 .event__title {
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-m);
 }
+.event__footer {
+  --text-line-space-xl: 25px;
+}
+
 .header {
   margin: var(--space-xxxl) var(--gap, 0);
 }

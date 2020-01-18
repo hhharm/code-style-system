@@ -82,7 +82,7 @@
       //Значения межстрочных интервалов:
       --text-line-space-s: 18px;
       --text-line-space-m: 10px;
-      --text-line-space-l: 12px;
+      --text-line-space-l: 13px;
       --text-line-space-xl: 16px;
       --text-line-space-xxl: 18px;
     }
@@ -95,7 +95,7 @@
       --space-xs: 9px;
       --space-s: 15px;
       --space-m: 18px;
-      --space-l: 24px;
+      --space-l: 25px;
       --space-xl: 27px;
       --space-xxl: 36px;
       --space-xxxl: 45px;
@@ -894,6 +894,9 @@
     margin: calc(var(--text-line-space) / 2) 0;
     display: inline-block;
 
+    .text_size_s & {
+      margin-top: var(--space-xxs);
+    }
     &_width {
       &_s {
         width: var(--text-word-width-s);
@@ -1065,6 +1068,8 @@
 .e-accordion {
   background-color: var(--block-background-color-main);
   cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
 
   &:hover {
     background-color: var(--block-background-color-main-hover);
