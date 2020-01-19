@@ -7,3 +7,6 @@ What I  used:
 - css variables. Because they are sweet :3
 - autoprefixer and nanocss from postcss
 
+༼ つ ಥ_ಥ ༽つ tests do not pass but it looks different and ok and pixel perfect on my computer
+
+(╯°□°）╯︵ ┻━┻ (╯°□°）╯︵ ┻━┻ (╯°□°）╯︵ ┻━┻
