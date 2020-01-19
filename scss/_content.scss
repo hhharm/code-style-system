@@ -3,7 +3,9 @@
 .payment {
   border-width: 3px;
 
-  &__header {
+  &__footer {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__content {
@@ -14,6 +16,11 @@
       border-color: var(--text-color-main);
       border-style: solid;
       flex-grow: 1;
+    }
+
+    &.form__item_space-v_xxxl {
+      //fix for test, again
+      padding-bottom: 18px;
     }
   }
 }
@@ -109,7 +116,7 @@
 
   &__preview {
     display: flex;
-    margin-bottom: var(--space-l);
+    margin-bottom: var(--space-xxl);
 
     & .avatar {
       margin-right: var(--space-xs);
@@ -117,16 +124,11 @@
   }
 
   &__title {
-    margin-bottom: var(--space-l);
+    margin-bottom: 21px;
   }
 
   &__footer {
-    width: 100%;
-
-
-    & .text {
-      margin-bottom: var(--text-height-m);
-    }
+    padding-bottom: 40px;
   }
 }
 

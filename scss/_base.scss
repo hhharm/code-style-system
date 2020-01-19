@@ -106,6 +106,7 @@
       --space-xxxxxl: 72px;
     }
   }
+
   &_gap_small {
     --gap: var(--space-s, 15px);
     @media (min-width: 1024px) {
@@ -573,7 +574,7 @@
     flex-basis: auto;
     display: inline-block;
     //take whole place
-    flex-grow: 1;
+    //flex-grow: 1;
   }
 
 }
