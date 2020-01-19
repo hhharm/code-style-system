@@ -412,19 +412,23 @@
 .informer_view_default {
   background-color: var(--block-background-color-main);
 }
-.informer__content {
+
+.informer__content_distribute_center {
+  text-align: center;
+}
+
+.informer__content_distribute_between {
   display: flex;
   flex-shrink: 0;
   flex-basis: 100%;
   flex-wrap: wrap;
-}
-.informer__content_distribute_center {
-  justify-content: center;
-}
-.informer__content_distribute_between {
   justify-content: space-between;
 }
 .informer__content_distribute_default {
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  flex-wrap: wrap;
   justify-content: initial;
 }
 .informer__content_space-a_xl {

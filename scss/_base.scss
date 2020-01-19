@@ -596,18 +596,18 @@
   }
 
   &__content {
-    @include flex-no-content-shrink;
-
     &_distribute {
       &_center {
-        justify-content: center;
+        text-align: center;
       }
 
       &_between {
+        @include flex-no-content-shrink;
         justify-content: space-between;
       }
 
       &_default {
+        @include flex-no-content-shrink;
         justify-content: initial;
       }
     }
