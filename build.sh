@@ -12,4 +12,3 @@ npx postcss ./static/*.css --use autoprefixer -d ./autoprefix
 echo "check ./autoprefix/style.css that there is no error after autoprefixer"
 command="npx postcss ./autoprefix/style.css > ./build/style.css"
 echo -e "then run \n ${command}"
-

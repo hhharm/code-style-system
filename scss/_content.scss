@@ -7,18 +7,13 @@
   }
 
   &__content {
-    padding-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
 
     & .form__control {
       border-color: var(--text-color-main);
       border-style: solid;
-    }
-  }
-
-  &__footer {
-    & .form__control {
-      display: flex;
-      justify-content: flex-end;
+      flex-grow: 1;
     }
   }
 }
@@ -27,21 +22,12 @@
   min-height: 335px;
 
   &__content {
-    --text-line-space-xl: 20px;
-    margin-bottom: var(--space-xs);
-  }
+    & .placeholder {
+      margin: var(--space-m) auto 18px;
+    }
 
-  & .text {
-    flex-basis: 100%;
-  }
-
-  & .placeholder {
-    margin-top: var(--space-m);
-    margin-bottom: var(--space-m);
-  }
-
-  &__button-wrapper {
-    //padding-top: var(--space-xxl);
+    margin-bottom: 8px;
+    --text-line-space-xl: 20px
   }
 }
 
@@ -50,17 +36,19 @@
   border-width: 3px;
 
   &__title {
-    margin-bottom: var(--space-xxxl);
-    margin-top: 4px;
+    //plus one because does not match with tests((
+    margin-bottom: calc(1px + var(--space-xxxl));
+
   }
 
   &__footer {
-    padding-bottom: var(--space-xs);
+    //same reason(
+    padding-bottom: 9px;
   }
 
   &__image {
     height: 160px;
-    width: 100%;
+
     --block-background-color-border: var(--block-background-color-border);
   }
 }
@@ -69,29 +57,25 @@
   border-width: 3px;
 
   &__transaction {
-    //padding-top: 0;
-    //padding-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   &__details {
     display: flex;
-    flex-grow: 1;
   }
 
   &__time {
-    //margin: auto;
-    padding: 12px 0;
-
-    & .text__word {
-      margin: 0;
-    }
+    margin: auto;
   }
 
   &__label {
+
   }
 
   &__quantity {
     & .text {
+
     }
   }
 }
@@ -100,18 +84,19 @@
   min-height: 472px;
 
   &__info {
+    --text-line-space-xxl: 17px;
     display: block;
   }
 
   &__preview {
     height: 180px;
+    width: 100%;
     margin-bottom: var(--space-l);
   }
 
-  & .text {
-  }
-
   &__footer {
+    width: 100%;
+
   }
 }
 
@@ -119,19 +104,12 @@
   min-height: 400px;
 
   &__content {
-
-  }
-
-  &__description {
-    --text-line-space-l: 17px;
+    flex-direction: column;
   }
 
   &__preview {
     display: flex;
-    margin-bottom: var(--space-xxl);
-    flex-basis: 100%;
-    justify-content: center;
-    //  todo: or calc(space xxl - space s?
+    margin-bottom: var(--space-l);
 
     & .avatar {
       margin-right: var(--space-xs);
@@ -139,18 +117,27 @@
   }
 
   &__title {
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-l);
   }
 
   &__footer {
-    --text-line-space-xl: 25px;
+    width: 100%;
+
+
+    & .text {
+      margin-bottom: var(--text-height-m);
+    }
   }
 }
 
 .header {
-  margin: var(--space-xxxl) var(--gap, 0);
-  //background-color: var(--block-background-color-main);
-  //border-color: var(--block-background-color-border);
+  margin: var(--space-xxxl) var(--gap);
+  max-width: 1280px;
+
+  background-color: var(--block-background-color-main);
+  border-color: var(--block-background-color-border);
+  margin-left: auto;
+  margin-right: auto;
 
   &__logo {
     width: 179px;
@@ -161,8 +148,6 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    max-width: 1280px;
-    margin: 0 auto;
   }
 }
 
@@ -171,7 +156,13 @@
   width: 97px;
   height: 32px;
   border: 2px solid var(--switch-color);
-  padding: 3px 1px;
+
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+
+  //@extend .theme_color_project-inverse;
+
   cursor: pointer;
 
   &__button {
@@ -186,6 +177,7 @@
     & .onoffswitch__button {
       //calc because transition doesn't work with auto
       margin-left: calc(100% - 25px);
+      //@extend .theme_color_project-default;
     }
   }
 
@@ -194,15 +186,15 @@
 .footer {
   background-color: var(--block-background-color-main);
   border-color: var(--block-background-color-border);
-  margin: var(--space-xxxl) var(--gap, 0);
+  margin: var(--space-xxxl) auto var(--gap);
+  max-width: 1280px;
 
   &__content {
     display: flex;
     justify-content: space-between;
-    max-width: 1280px;
-    margin: 0 auto;
 
     & .text {
+
     }
   }
 }
